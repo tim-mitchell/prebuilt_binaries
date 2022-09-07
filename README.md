@@ -14,7 +14,7 @@ with - however this is pretty easy to get right when it's part of the same build
 
 `class PrebuiltExtension(input_filename)`
 
-: where `input_filename` is the full path to the pre-build extension module (.pyd file)
+: where `input_filename` is the full path to the pre-built extension module (.pyd file)
 
 `class prebuilt_binary`
 
