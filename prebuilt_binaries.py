@@ -7,12 +7,14 @@ from setuptools import Extension
 
 
 class PrebuiltExtension(Extension):
-    def __init__(self, input_file, *args, **kw):
+    def __init__(self, input_file, package=None):
         name = pathlib.Path(input_file).stem
+        if package is not None:
+            name = f'{package}.{name}'
         if not os.path.exists(input_file):
             raise ValueError(f'Prebuilt extension file not found\n{input_file}')
         self.input_file = input_file
-        super().__init__(name, ['no-source-needed.c'], *args, **kw)
+        super().__init__(name, ['no-source-needed.c'])
 
 
 class prebuilt_binary(build_ext.build_ext):

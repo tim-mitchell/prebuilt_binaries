@@ -12,9 +12,11 @@ with - however this is pretty easy to get right when it's part of the same build
 
 # API
 
-`class PrebuiltExtension(input_filename)`
+`class PrebuiltExtension(input_filename, package=None)`
 
 : where `input_filename` is the full path to the pre-built extension module (.pyd file)
+The stem of `input_filename` is used for the name of the extension module.
+If `package` is passed then the name of the extension module will be `<package>.<name>`
 
 `class prebuilt_binary`
 
